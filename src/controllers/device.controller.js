@@ -9,6 +9,7 @@ const createDevice = asyncHandler(async (req, res) => {
   //get device details from frontend
   const { boardId, serialId, name, IOPins, ports, apikey, projectId } =
     req.body;
+
   const userId = req.user._id;
 
   //validation

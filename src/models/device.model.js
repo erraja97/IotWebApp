@@ -12,7 +12,7 @@ const portSchema = new mongoose.Schema({
   },
   mode: {
     type: String,
-    enum: ["INPUT", "OUTPUT", "INPUT_PULLUP"],
+    enum: ["INPUT", "OUTPUT", "INPUT_PULLUP", "UNSET"],
     required: true,
   },
   value: {
@@ -47,6 +47,12 @@ const deviceSchema = new Schema(
       type: Boolean,
       required: true,
       default: false,
+    },
+    mode: {
+      type: String,
+      enum: ["SEND", "RECEIVE", "SEND_AND_RECEIVE", "UNASSIGNED"],
+      required: true,
+      default: "UNASSIGNED",
     },
     IOPins: {
       type: Number,
