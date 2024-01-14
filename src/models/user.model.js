@@ -29,6 +29,11 @@ const userSchema = new Schema(
       type: String, //from cloudinary
       required: true,
     },
+    role: {
+      type: String,
+      enum: ["admin", "normal", "guest"],
+      default: "admin",
+    },
     password: {
       type: String,
       required: [true, "Password is required"],
