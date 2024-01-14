@@ -4,7 +4,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { User } from "../models/user.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import jwt from "jsonwebtoken";
-import mongoose from "mongoose";
+
 
 const generateAccessAndRefreshTokens = async (userId) => {
   try {
@@ -42,7 +42,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (existedUser) {
-    throw ApiError(409, "User with email or username already exists");
+    throw new ApiError(409, "User with email or username already exists");
   }
 
   //check for avatar image

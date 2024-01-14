@@ -28,8 +28,10 @@ app.use(cookieParser());
 
 //routes import
 import userRouter from "../src/routes/user.routes.js";
+import deviceRouter from "../src/routes/device.routes.js";
 
 //routes declaration
 app.use("/api/v1/users", userRouter); //https://localhost:8000/api/v1/users/register
+app.use("/api/v1/devices", deviceRouter); //https://localhost:8000/api/v1/devices/create
 
 export { app };
